@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jiles Ebai - Home</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #e8f5e9;
+        }
+
+        header {
+            background: green;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        #timer {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav {
+            background: #2c3e50;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        nav a:hover {
+            color: #e74c3c;
+        }
+
+        section {
+            background: white;
+            width: 80%;
+            margin: 30px auto;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            color: green;
+        }
+
+        footer {
+            background: #35424a;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>My Name is Jiles Ebai</h1>
+    <div id="timer">Loading time...</div>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="jokes.html">Random Jokes</a>
+    <a href="dictionary.html">Dictionary</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<section id="about">
+    <h2>About Me</h2>
+
+    <ul>
+        <li>I'm right handed</li>
+        <li>My favorite color is green</li>
+        <li>My birthday is Nov. 26 🎉</li>
+
+        <li>
+            My favorite player is LeBron<br>
+            <a href="https://www.nba.com/player/2544/lebron-james" target="_blank">
+                His real stats (GOAT)
+            </a>
+        </li>
+
+        <li>My favorite superhero is Spider-Man 🕷️</li>
+
+        <li>
+            Favorite artist: NBA YoungBoy<br>
+            <a href="https://www.youtube.com/watch?v=SnkjvECEQr4" target="_blank">No Smoke</a>
+        </li>
+    </ul>
+</section>
+
+<footer>
+    © 2025 Jiles Ebai — My Personal Projects
+</footer>
+
+<script>
+    function updateTimer() {
+        const now = new Date();
+        const formatted = now.toLocaleString("en-US", {
+            weekday: 'long',
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric'
+        });
+        document.getElementById("timer").innerText = formatted;
+    }
+    setInterval(updateTimer, 1000);
+    updateTimer();
+</script>
+
+</body>
+</html>
+
+    <h1>Enhanced Variable Project</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="jokes.html">Random Jokes</a>
+    <a href="dictionary.html">Dictionary</a>
+    <a href="variables.html">Variables</a>
+</nav>
+
+<section>
+    <h2>Variable Calculation</h2>
+
+    <div class="box" id="variableOutput">Loading...</div>
+</section>
+
+<script>
+    let item1Price = 9;
+    let multiplier = 4;
+    let amountLeft = 10;
+
+    let item2Price = multiplier * item1Price;
+    let startAmount = item1Price + item2Price + amountLeft;
+
+    document.getElementById("variableOutput").innerHTML =
+        "The cost of item 1: $" + item1Price + "<br>" +
+        "The multiplier: " + multiplier + "<br>" +
+        "The amount we had left: $" + amountLeft + "<br>" +
+        "The starting amount was: $" + startAmount;
+</script>
+
+</body>
+</html>
+
