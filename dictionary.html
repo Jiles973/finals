@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dictionary Search</title>
+
+    <style>
+        body { font-family: Arial; background: #e8f5e9; margin: 0; }
+        header { background: green; color: white; padding: 20px; text-align: center; }
+        nav { background: #2c3e50; padding: 15px; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-size: 20px; }
+        nav a:hover { color: #e74c3c; }
+        section { background: white; width: 80%; margin: 30px auto; padding: 25px;
+                  border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+        input { font-size: 18px; padding: 10px; width: 60%; border-radius: 8px; }
+        button { padding: 10px 20px; background: green; color: white; border-radius: 8px;
+                 font-size: 18px; cursor: pointer; }
+        .box { border: 2px solid #444; padding: 20px; border-radius: 12px; }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Dictionary Search</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="jokes.html">Random Jokes</a>
+    <a href="dictionary.html">Dictionary</a>
+    <a href="variables.html">Variables</a>
+</nav>
+
+<section>
+    <h2>Look Up a Word</h2>
+
+    <div class="box">
+        <input id="wordInput" placeholder="Type a word...">
+        <button onclick="searchWord()">Search</button>
+        <p id="definition"></p>
+    </div>
+</section>
+
+<script>
+    function searchWord() {
+        const word = document.getElementById("wordInput").value.trim();
+
+        if (!word) {
+            document.getElementById("definition").innerText = "Please enter a word!";
+            return;
+        }
+
+        fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.title === "No Definitions Found") {
+                    document.getElementById("definition").innerText = "Word not found!";
+                } else {
+                    document.getElementById("definition").innerText =
+                        data[0].meanings[0].definitions[0].definition;
+                }
+            })
+            .catch(() => {
+                document.getElementById("definition").innerText = "Error fetching definition.";
+            });
+    }
+</script>
+
+</body>
+</html>

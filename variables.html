@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Variable Project</title>
+
+    <style>
+        body { font-family: Arial; background: #e8f5e9; margin: 0; }
+        header { background: green; padding: 20px; color: white; text-align: center; }
+        nav { background: #2c3e50; padding: 15px; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-size: 20px; }
+        nav a:hover { color: #e74c3c; }
+        section { background: white; width: 80%; margin: 30px auto; padding: 25px;
+                  border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+        .box { border: 2px solid #444; padding: 20px; border-radius: 12px; }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Enhanced Variable Project</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="jokes.html">Random Jokes</a>
+    <a href="dictionary.html">Dictionary</a>
+    <a href="variables.html">Variables</a>
+</nav>
+
+<section>
+    <h2>Variable Calculation</h2>
+
+    <div class="box" id="variableOutput">Loading...</div>
+</section>
+
+<script>
+    let item1Price = 9;
+    let multiplier = 4;
+    let amountLeft = 10;
+
+    let item2Price = multiplier * item1Price;
+    let startAmount = item1Price + item2Price + amountLeft;
+
+    document.getElementById("variableOutput").innerHTML =
+        "The cost of item 1: $" + item1Price + "<br>" +
+        "The multiplier: " + multiplier + "<br>" +
+        "The amount we had left: $" + amountLeft + "<br>" +
+        "The starting amount was: $" + startAmount;
+</script>
+
+</body>
+</html>
